@@ -9,7 +9,7 @@ int main()
 	char per4[278] = " 	      ######\n 	    ##########\n 	   #############\n 	   #############\n 	    ##########\n 	      ######\n   	        ##\n    	       ####\n   	    ### ## ###\n    	 ###    ##    ###\n                ##\n                ##\n                ##\n               #  #\n               #  #";
 	char per5[278] = " 	      ######\n 	    ##########\n 	   #############\n 	   #############\n 	    ##########\n 	      ######\n   	        ##\n    	       ####\n   	    ### ## ###\n    	 ###    ##    ###\n                ##\n                ##\n                ##\n                ##\n                ##";
 	//hola
-	//hello world how are you doing I would like this pice of shit to work out so fuking bad. bye
+	//Adrià
 	char* pers[5];
 	pers[0] = per1;
 	pers[1] = per2;
