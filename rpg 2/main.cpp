@@ -11,6 +11,7 @@ int main()
 	//hola
 	//Adrià - HOLA MUY BUENAS COMPIS!
 	//Pau - Pasaba por aqui...
+	//5E7EN Rave - Drop The Base!
 	char* pers[5];
 	pers[0] = per1;
 	pers[1] = per2;
