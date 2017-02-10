@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9E1AF2C0-2FA7-4A5D-A097-38B53919DEFD}</ProjectGuid>
+    <ProjectGuid>{B568F90C-942D-4665-B495-D6730B93E314}</ProjectGuid>
     <RootNamespace>rpg2</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -66,10 +66,9 @@
   <ItemGroup>
     <ClCompile Include="combat.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="addition.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="combat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

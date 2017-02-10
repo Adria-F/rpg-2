@@ -18,19 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="combat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="combat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-=======
-    <ClCompile Include="addition.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
->>>>>>> origin/master
   </ItemGroup>
 </Project>
