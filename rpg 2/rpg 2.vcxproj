@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="combat.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="addition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
