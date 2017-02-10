@@ -1,4 +1,4 @@
-﻿Build started 10/2/2017 18:36:21.
+﻿Build started 10/2/2017 19:16:14.
      1>Project "D:\Usuarios\Adrià\Escritorio 3\rpg 2\rpg 2\rpg 2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Programes\Microsoft Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.84
+Time Elapsed 00:00:01.08
