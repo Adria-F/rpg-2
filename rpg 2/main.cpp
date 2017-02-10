@@ -10,9 +10,8 @@ int main()
 	char per5[278] = " 	      ######\n 	    ##########\n 	   #############\n 	   #############\n 	    ##########\n 	      ######\n   	        ##\n    	       ####\n   	    ### ## ###\n    	 ###    ##    ###\n                ##\n                ##\n                ##\n                ##\n                ##";
 	//hola
 	//Adrià - HOLA MUY BUENAS COMPIS!
-	//Pau - Pasaba por aqui...
-	//5E7EN Rave - Drop The Base!
-	//TU PAREU JA ENSERIO!
+	//Pau - Un tonto pasaba por aqui...
+	//5E7EN Rave - Drop The Apple!
 	char* pers[5];
 	pers[0] = per1;
 	pers[1] = per2;
