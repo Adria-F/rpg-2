@@ -13,6 +13,8 @@ int main()
 
 
 	//Aixo NO va!
+
+	//This is the real shit madafaka!
 	char* pers[5];
 	pers[0] = per1;
 	pers[1] = per2;
