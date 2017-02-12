@@ -65,11 +65,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="combat.h" />
+    <ClInclude Include="events.h" />
     <ClInclude Include="structs.h" />
     <ClInclude Include="text_function.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="combat.cpp" />
+    <ClCompile Include="events.cpp" />
     <ClCompile Include="History.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
