@@ -1,0 +1,16 @@
+﻿  skills.cpp
+  main.cpp
+c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+  History.cpp
+  events.cpp
+c:\users\pi\documents\github\rpg-2\rpg 2\events.cpp(7): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'int'
+c:\users\pi\documents\github\rpg-2\rpg 2\events.cpp(7): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+  combat.cpp
+c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+c:\users\pi\documents\github\rpg-2\rpg 2\combat.cpp(79): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+c:\users\pi\documents\github\rpg-2\rpg 2\history.cpp(8): error C4716: 'text': must return a value
+c:\users\pi\documents\github\rpg-2\rpg 2\skills.cpp(5): error C4716: 'skills': must return a value
