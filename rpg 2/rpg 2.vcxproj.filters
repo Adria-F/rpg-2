@@ -21,13 +21,13 @@
     <ClInclude Include="structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="text_function.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="events.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="skills.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="history.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

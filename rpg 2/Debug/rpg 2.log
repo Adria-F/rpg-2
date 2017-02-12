@@ -1,16 +1,20 @@
-﻿  skills.cpp
-  main.cpp
-c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
-  History.cpp
-  events.cpp
-c:\users\pi\documents\github\rpg-2\rpg 2\events.cpp(7): warning C4477: 'scanf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'int'
-c:\users\pi\documents\github\rpg-2\rpg 2\events.cpp(7): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-  combat.cpp
-c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  c:\users\pi\documents\github\rpg-2\rpg 2\structs.h(12): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
-c:\users\pi\documents\github\rpg-2\rpg 2\combat.cpp(79): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-c:\users\pi\documents\github\rpg-2\rpg 2\history.cpp(8): error C4716: 'text': must return a value
-c:\users\pi\documents\github\rpg-2\rpg 2\skills.cpp(5): error C4716: 'skills': must return a value
+﻿Build started 12/2/2017 19:27:10.
+     1>Project "D:\Usuarios\Adrià\Escritorio 3\rpg 2\rpg 2\rpg 2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Programes\Microsoft Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt combat.cpp
+         combat.cpp
+     1>d:\usuarios\adrià\escritorio 3\rpg 2\rpg 2\structs.h(12): warning C4200: nonstandard extension used : zero-sized array in struct/union
+                 Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
+     1>d:\usuarios\adrià\escritorio 3\rpg 2\rpg 2\combat.cpp(79): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+       Link:
+         D:\Programes\Microsoft Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Usuarios\Adrià\Escritorio 3\rpg 2\Debug\rpg 2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Usuarios\Adrià\Escritorio 3\rpg 2\Debug\rpg 2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Usuarios\Adrià\Escritorio 3\rpg 2\Debug\rpg 2.lib" /MACHINE:X86 Debug\combat.obj
+         Debug\events.obj
+         Debug\History.obj
+         Debug\main.obj
+         Debug\skills.obj
+         rpg 2.vcxproj -> D:\Usuarios\Adrià\Escritorio 3\rpg 2\Debug\rpg 2.exe
+     1>Done Building Project "D:\Usuarios\Adrià\Escritorio 3\rpg 2\rpg 2\rpg 2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.34

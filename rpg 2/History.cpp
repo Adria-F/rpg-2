@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include "text_function.h"
+#include "history.h"
 
-int text() {
+void text()
+{
 
 	printf("Holi");
 
