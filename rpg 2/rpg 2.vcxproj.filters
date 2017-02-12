@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\rpg 2\rpg 2\combat.h">
+    <ClInclude Include="combat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\rpg 2\rpg 2\structs.h">
+    <ClInclude Include="structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\rpg 2\rpg 2\text_function.h">
+    <ClInclude Include="text_function.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\rpg 2\rpg 2\combat.cpp">
+    <ClCompile Include="combat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\rpg 2\rpg 2\History.cpp">
+    <ClCompile Include="History.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\rpg 2\rpg 2\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

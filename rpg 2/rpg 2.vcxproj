@@ -64,14 +64,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\rpg 2\rpg 2\combat.h" />
-    <ClInclude Include="..\..\..\rpg 2\rpg 2\structs.h" />
-    <ClInclude Include="..\..\..\rpg 2\rpg 2\text_function.h" />
+    <ClInclude Include="combat.h" />
+    <ClInclude Include="structs.h" />
+    <ClInclude Include="text_function.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\rpg 2\rpg 2\combat.cpp" />
-    <ClCompile Include="..\..\..\rpg 2\rpg 2\History.cpp" />
-    <ClCompile Include="..\..\..\rpg 2\rpg 2\main.cpp" />
+    <ClCompile Include="combat.cpp" />
+    <ClCompile Include="History.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
