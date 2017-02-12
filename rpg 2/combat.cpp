@@ -1,20 +1,5 @@
 #include "combat.h"
 
-void set_hero_data(hero_data* hero)
-{
-	printf("Enter the name of our hero (max. 10 characters): ");
-	scanf_s("%s", &hero[0].name, 10);
-
-	printf("Enter stats for %s <HP, Attack, Armor>\n(Recomended: 500 80 15): ", hero[0].name);
-	scanf_s("%d", &hero[0].hp);
-	scanf_s("%d", &hero[0].attack);
-	scanf_s("%d", &hero[0].armor);
-	hero[0].coins = 0;
-	hero[0].exp = 0;
-	hero[0].lvl = 1;
-
-	fflush(stdin);
-}
 
 void set_monster_data(monster_data* goblins, int enemy_num)
 {

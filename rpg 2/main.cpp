@@ -6,17 +6,21 @@
 #include "events.h"
 #include "skills.h"
 #include "history.h"
+#include "utility_functions.h"
 
 
 int main()
 {
 	struct hero_data hero;
 
-	set_hero_data(&hero);
+	FILE* game;
+	fopen_s(&game, "game.txt", "a");
+	fclose(game);
 
-	fight(&hero);
+	check_and_load_game(game, &hero);
 
-	free(&hero);
+
+	//fight(&hero);
 
 	getchar();
 	return 0;
