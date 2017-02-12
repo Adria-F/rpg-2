@@ -3,3 +3,8 @@ int combat()
 {
 
 }
+
+int fight()
+{
+
+}
