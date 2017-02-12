@@ -1,5 +1,5 @@
 #include <stdio.h>
-int skills() 
+void skills() 
 {
 	printf("skills");
 }

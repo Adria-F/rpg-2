@@ -10,7 +10,7 @@ struct hero_data
 	int hp;
 	int lvl;
 	char name[];
-}hero;
+};
 
 struct monster_data
 {
