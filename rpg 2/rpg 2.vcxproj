@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClInclude Include="combat.h" />
     <ClInclude Include="events.h" />
+    <ClInclude Include="skills.h" />
     <ClInclude Include="structs.h" />
     <ClInclude Include="text_function.h" />
   </ItemGroup>
@@ -74,6 +75,7 @@
     <ClCompile Include="events.cpp" />
     <ClCompile Include="History.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="skills.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
