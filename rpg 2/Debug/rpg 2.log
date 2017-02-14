@@ -1,1 +1,9 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Platforms\Win32\PlatformToolsets\v140\Toolset.targets(34,5): error MSB8036: The Windows SDK version 8.1 was not found. Install the required version of Windows SDK or change the SDK version in the project property pages or by right-clicking the solution and selecting "Retarget solution".
+﻿  utility_functions.cpp
+c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): note: this argument is used as a buffer size
+  main.cpp
+  Generating Code...
+  rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.exe
+  rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.pdb (Full PDB)

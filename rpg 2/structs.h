@@ -9,7 +9,7 @@ struct hero_data
 	int lvl = 1;
 	int exp = 0;
 	int coins = 0;
-	char* name;
+	char name[30];
 };
 
 struct monster_data

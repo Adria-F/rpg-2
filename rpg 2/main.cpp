@@ -19,6 +19,7 @@ int main()
 
 	check_and_load_game(game, &hero);
 
+	printf("\nNAME: %s\nHP: %d\nATTACK: %d\nARMOR: %d\nLVL: %d\nEXP: %d\nCOINS: %d", hero.name, hero.hp, hero.attack, hero.armor, hero.lvl, hero.exp, hero.coins);
 
 	//fight(&hero);
 
