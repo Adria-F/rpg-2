@@ -1,9 +1,5 @@
-﻿  utility_functions.cpp
-c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): warning C4473: 'scanf_s' : not enough arguments passed for format string
-  c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
-  c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): note: the missing variadic argument 2 is required by format string '%c'
-  c:\users\adriafc\desktop\rpg-2\rpg 2\utility_functions.cpp(41): note: this argument is used as a buffer size
-  main.cpp
-  Generating Code...
+﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+  combat.cpp
+c:\users\adriafc\desktop\rpg-2\rpg 2\combat.cpp(54): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.exe
   rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.pdb (Full PDB)

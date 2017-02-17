@@ -1,5 +1,65 @@
 #include "combat.h"
 
+void set_monster_data(monster_data* goblins, int enemy_num);
+
+void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enemy_num, int* counter)
+{
+	printf("You attack goblin #%d", goblins[objective].number);
+	printf("\nChoose which attack you want to use:");
+	printf("\n1- Normal Attack");
+	printf("\n2- Spin Attack");
+	printf("\n3- Stab Attack");
+	printf("\n4- Counter Attack\n");
+	int attack = 0;
+	int end_turn = 0;
+	while (end_turn == 0)
+	{
+		scanf_s("%d", &attack);
+		if (attack == 1)
+		{
+			int hero_damage = hero[0].attack - goblins[objective].armor;
+			if (hero_damage < 0)
+			{
+				hero_damage = 0;
+			}
+			printf("You used a normal attack against goblin #%d and dealt %d damage", goblins[objective].number, hero_damage);
+			goblins[objective].hp -= hero_damage;
+			end_turn = 1;
+		}
+		else if (attack == 2)
+		{
+			spin_attack(goblins, hero[0].attack, enemy_num);
+			end_turn = 1;
+		}
+		else if (attack == 3)
+		{
+			stab_attack(goblins, objective, hero[0].attack);
+			end_turn = 1;
+		}
+		else if (attack == 4)
+		{
+			printf("You are waiting for goblin #%d to attack, to counter it", goblins[objective].number);
+			*counter = 1;
+			end_turn = 1;
+		}
+		else
+		{
+			printf("Wrong choice\n");
+		}
+	}
+}
+
+void fight(hero_data* hero)
+{
+	srand(time(NULL));
+	int enemy_num = rand() % 5 + 1; //number of goblins between 1 and 6
+	struct monster_data* goblins = (struct monster_data*)malloc(enemy_num * sizeof(struct monster_data));
+	set_monster_data(goblins, enemy_num);
+	int enemy_to_attack = rand() % enemy_num;
+	int counter_attack = 0;
+	combat_menu(hero, goblins, enemy_to_attack, enemy_num, &counter_attack);
+	getchar();
+}
 
 void set_monster_data(monster_data* goblins, int enemy_num)
 {
@@ -15,7 +75,7 @@ void set_monster_data(monster_data* goblins, int enemy_num)
 	}
 }
 
-void set_chief_data(monster_data* goblins)
+/*void set_chief_data(monster_data* goblins)
 {
 	goblins[0].hp = rand() % 151 + 100; //random number between 100 and 250
 	goblins[0].attack = 75;
@@ -149,4 +209,4 @@ void fight(hero_data* hero)
 	hero_coins += coins_received;
 	hero_xp += xp_received;
 	printf("During your battles you got %d coins and %d xp.\n", hero_coins, total_xp);
-}
+}*/

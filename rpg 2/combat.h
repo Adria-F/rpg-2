@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "structs.h"
+#include "skills.h"
 
 void fight(hero_data* hero);
 

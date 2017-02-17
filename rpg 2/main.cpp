@@ -17,11 +17,11 @@ int main()
 	fopen_s(&game, "game.txt", "a");
 	fclose(game);
 
-	check_and_load_game(game, &hero);
+	//check_and_load_game(game, &hero);
 
-	printf("\nNAME: %s\nHP: %d\nATTACK: %d\nARMOR: %d\nLVL: %d\nEXP: %d\nCOINS: %d", hero.name, hero.hp, hero.attack, hero.armor, hero.lvl, hero.exp, hero.coins);
+	//printf("\nNAME: %s\nHP: %d\nATTACK: %d\nARMOR: %d\nLVL: %d\nEXP: %d\nCOINS: %d", hero.name, hero.hp, hero.attack, hero.armor, hero.lvl, hero.exp, hero.coins);
 
-	//fight(&hero);
+	fight(&hero);
 
 	getchar();
 	return 0;
