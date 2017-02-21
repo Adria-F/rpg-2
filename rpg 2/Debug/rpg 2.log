@@ -1,5 +1,4 @@
-﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  combat.cpp
+﻿  combat.cpp
 c:\users\adriafc\desktop\rpg-2\rpg 2\combat.cpp(54): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.exe
   rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.pdb (Full PDB)
