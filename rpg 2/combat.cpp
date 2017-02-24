@@ -4,7 +4,6 @@ void set_monster_data(monster_data* goblins, int enemy_num);
 
 void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enemy_num, int* counter)
 {
-	printf("You attack goblin #%d", goblins[objective].number);
 	printf("\nChoose which attack you want to use:");
 	printf("\n1- Normal Attack");
 	printf("\n2- Spin Attack");
@@ -52,12 +51,45 @@ void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enem
 void fight(hero_data* hero)
 {
 	srand(time(NULL));
-	int enemy_num = rand() % 5 + 1; //number of goblins between 1 and 6
-	struct monster_data* goblins = (struct monster_data*)malloc(enemy_num * sizeof(struct monster_data));
-	set_monster_data(goblins, enemy_num);
-	int enemy_to_attack = rand() % enemy_num;
-	int counter_attack = 0;
-	combat_menu(hero, goblins, enemy_to_attack, enemy_num, &counter_attack);
+	int enemy_num;
+	int enemies_killed;
+	while (hero[0].hp > 0)
+	{
+		enemies_killed = 0;
+		enemy_num = rand() % 5 + 1; //number of goblins between 1 and 6
+		struct monster_data* goblins = (struct monster_data*)malloc(enemy_num * sizeof(struct monster_data));
+		set_monster_data(goblins, enemy_num);
+		while (enemies_killed != enemy_num && hero[0].hp > 0)
+		{
+			int enemy_to_attack = rand() % enemy_num;
+			while (goblins[enemy_to_attack].hp <= 0)
+			{
+				enemy_to_attack = rand() % enemy_num;
+			}
+			int counter_attack = 0;
+			printf("You fight against %d goblins and have %d HP left", enemy_num, hero[0].hp);
+			combat_menu(hero, goblins, enemy_to_attack, enemy_num, &counter_attack);
+			for (int i = 0; i < enemy_num; i++)
+			{
+				if (goblins[i].hp > 0)
+				{
+					int goblin_damage = goblins[i].attack - hero[0].armor;
+					if (counter_attack == 0)
+					{
+						printf("\nGoblin #%d dealt %d damage to you", goblins[i].number, goblin_damage);
+						hero[0].hp -= goblin_damage;
+					}
+					else
+					{
+						printf("\nYou countered the attack of goblin #%d and dealt %d damage to him", goblins[i].number, goblin_damage);
+						goblins[i].hp -= goblin_damage;
+					}
+				}
+			}
+			printf("\n\n");
+		}
+		free(goblins);
+	}
 	getchar();
 }
 
