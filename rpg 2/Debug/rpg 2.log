@@ -1,4 +1,4 @@
 ﻿  combat.cpp
-c:\users\adriafc\desktop\rpg-2\rpg 2\combat.cpp(53): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.exe
-  rpg 2.vcxproj -> C:\Users\adriafc\Desktop\rpg-2\Debug\rpg 2.pdb (Full PDB)
+c:\users\adrià ferrer\desktop\rpg-2\rpg 2\combat.cpp(66): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  rpg 2.vcxproj -> C:\Users\Adrià Ferrer\Desktop\rpg-2\Debug\rpg 2.exe
+  rpg 2.vcxproj -> C:\Users\Adrià Ferrer\Desktop\rpg-2\Debug\rpg 2.pdb (Full PDB)

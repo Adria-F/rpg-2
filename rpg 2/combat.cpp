@@ -1,8 +1,31 @@
 #include "combat.h"
 
-void set_monster_data(monster_data* goblins, int enemy_num);
+void set_monster_data(monster_data* goblins, int enemy_num)
+{
+	for (int i = 0; i < enemy_num; i++)
+	{
+		goblins[i].hp = rand() % 76 + 75; //random number between 75 and 150
+		goblins[i].attack = 35;
+		goblins[i].armor = rand() % 10 + 1;
+		goblins[i].coins = rand() % 16 + 5; //random number between 5 and 20
+		goblins[i].exp = rand() % 31 + 20; //random number between 20 and 50
+		goblins[i].number = i + 1; //to show the proper number in screen
+		goblins[i].type_name = "goblin"; //useless by now
+	}
+}
 
-void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enemy_num, int* counter)
+void check_killed_goblin(monster_data* goblins, int objective, int* gold, int* exp, int* enemies_killed)
+{
+	if (goblins[objective].hp < 0)
+	{
+		printf("\nYou killed goblin #%d and gained %d exp and %d gold", goblins[objective].number, goblins[objective].exp, goblins[objective].coins);
+		*gold += goblins[objective].coins;
+		*exp += goblins[objective].exp;
+		*enemies_killed += 1;
+	}
+}
+
+void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enemy_num, int* counter, int* gold, int* exp, int* enemies_killed)
 {
 	printf("\nChoose which attack you want to use:");
 	printf("\n1- Normal Attack");
@@ -11,10 +34,10 @@ void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enem
 	printf("\n4- Counter Attack\n");
 	int attack = 0;
 	int end_turn = 0;
-	while (end_turn == 0)
+	while (end_turn == 0) //while you haven't picked a correct option
 	{
 		scanf_s("%d", &attack);
-		if (attack == 1)
+		if (attack == 1) //normal attack
 		{
 			int hero_damage = hero[0].attack - goblins[objective].armor;
 			if (hero_damage < 0)
@@ -24,18 +47,20 @@ void combat_menu(hero_data* hero, monster_data* goblins, int objective, int enem
 			printf("You used a normal attack against goblin #%d and dealt %d damage", goblins[objective].number, hero_damage);
 			goblins[objective].hp -= hero_damage;
 			end_turn = 1;
+			check_killed_goblin(goblins, objective, gold, exp, enemies_killed);
 		}
-		else if (attack == 2)
+		else if (attack == 2) //spin attack
 		{
-			spin_attack(goblins, hero[0].attack, enemy_num);
+			spin_attack(goblins, hero[0].attack, enemy_num, gold, exp, enemies_killed);
 			end_turn = 1;
 		}
-		else if (attack == 3)
+		else if (attack == 3) //stab attack
 		{
 			stab_attack(goblins, objective, hero[0].attack);
 			end_turn = 1;
+			check_killed_goblin(goblins, objective, gold, exp, enemies_killed);
 		}
-		else if (attack == 4)
+		else if (attack == 4) //counter attack
 		{
 			printf("You are waiting for goblin #%d to attack, to counter it", goblins[objective].number);
 			*counter = 1;
@@ -53,58 +78,59 @@ void fight(hero_data* hero)
 	srand(time(NULL));
 	int enemy_num;
 	int enemies_killed;
-	while (hero[0].hp > 0)
+	int wave = 1;
+	int gained_exp = 0; //count the total exp earned in a wave
+	int gained_gold = 0; //count the total gold earned in a wave
+	
+	while (hero[0].hp > 0) //while hero is alive
 	{
 		enemies_killed = 0;
 		enemy_num = rand() % 5 + 1; //number of goblins between 1 and 6
 		struct monster_data* goblins = (struct monster_data*)malloc(enemy_num * sizeof(struct monster_data));
-		set_monster_data(goblins, enemy_num);
-		while (enemies_killed != enemy_num && hero[0].hp > 0)
+		set_monster_data(goblins, enemy_num); //initialize goblin data
+		while (enemies_killed != enemy_num && hero[0].hp > 0) //while all goblins or hero aren't dead
 		{
-			int enemy_to_attack = rand() % enemy_num;
-			while (goblins[enemy_to_attack].hp <= 0)
+			int enemy_to_attack = rand() % enemy_num; //choose randomly the enemy to attack
+			while (goblins[enemy_to_attack].hp <= 0) //repeat process while choosen goblin is not dead
 			{
 				enemy_to_attack = rand() % enemy_num;
 			}
 			int counter_attack = 0;
-			printf("You fight against %d goblins and have %d HP left", enemy_num, hero[0].hp);
-			combat_menu(hero, goblins, enemy_to_attack, enemy_num, &counter_attack);
-			for (int i = 0; i < enemy_num; i++)
+			printf("You fight against %d goblins and have %d HP left", (enemy_num - enemies_killed), hero[0].hp);
+			combat_menu(hero, goblins, enemy_to_attack, enemy_num, &counter_attack, &gained_gold, &gained_exp, &enemies_killed);
+			for (int i = 0; i < enemy_num; i++) //step over every goblin
 			{
-				if (goblins[i].hp > 0)
+				if (goblins[i].hp > 0) //just enter if current goblin is alive
 				{
 					int goblin_damage = goblins[i].attack - hero[0].armor;
-					if (counter_attack == 0)
+					if (goblin_damage < 0)
+					{
+						goblin_damage = 0;
+					}
+
+					if (counter_attack == 0) //normal attack
 					{
 						printf("\nGoblin #%d dealt %d damage to you", goblins[i].number, goblin_damage);
 						hero[0].hp -= goblin_damage;
 					}
-					else
+					else //you counter it's attack
 					{
 						printf("\nYou countered the attack of goblin #%d and dealt %d damage to him", goblins[i].number, goblin_damage);
 						goblins[i].hp -= goblin_damage;
+						check_killed_goblin(goblins, enemy_to_attack, &gained_gold, &gained_exp, &enemies_killed);
+						counter_attack = 0;
 					}
 				}
 			}
 			printf("\n\n");
 		}
+		printf("You completed wave %d and received %d exp and %d gold\n\n", wave, gained_exp, gained_gold);
+		hero[0].exp += gained_exp;
+		hero[0].coins += gained_gold;
+		wave++;
 		free(goblins);
 	}
 	getchar();
-}
-
-void set_monster_data(monster_data* goblins, int enemy_num)
-{
-	for (int i = 0; i < enemy_num; i++)
-	{
-		goblins[i].hp = rand() % 76 + 75; //random number between 75 and 150
-		goblins[i].attack = 35;
-		goblins[i].armor = rand() % 10 + 1;
-		goblins[i].coins = rand() % 16 + 5; //random number between 5 and 20
-		goblins[i].exp = rand() % 31 + 20; //random number between 20 and 50
-		goblins[i].number = i + 1;
-		goblins[i].type_name = "goblin";
-	}
 }
 
 /*void set_chief_data(monster_data* goblins)
